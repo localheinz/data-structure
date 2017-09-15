@@ -17,6 +17,19 @@ Run
 $ composer require localheinz/data-structure
 ```
 
+## Data Structures
+
+* `Localheinz\DataStructure\Stack`
+
+### Stack
+
+```php
+use Localheinz\DataStructure\Stack;
+
+$stack = new Stack();
+```
+
+
 ## Contributing
 
 Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
