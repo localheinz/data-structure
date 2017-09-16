@@ -17,6 +17,40 @@ Run
 $ composer require localheinz/data-structure
 ```
 
+## Data Structures
+
+* `Localheinz\DataStructure\Stack`
+
+### Stack
+
+```php
+use Localheinz\DataStructure\Stack;
+
+$stack = new Stack();
+
+$stack->isEmpty(); // true
+$stack->isFull(); // false
+
+$stack->push('foo');
+$stack->push('bar');
+$stack->isEmpty(); // false
+$stack->isFull(); // false
+
+$stack->peek(); // 'bar'
+
+$stack->pop(); // 'bar'
+$stack->pop(); // 'foo'
+$stack->isEmpty(); // true
+$stack->isFull(); // false
+
+$maxSize = 1;
+
+$anotherStack = new Stack($maxSize);
+
+$anotherStack->push('foo');
+$anotherStack->isFull(); // true
+```
+
 ## Contributing
 
 Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
