@@ -19,7 +19,36 @@ $ composer require localheinz/data-structure
 
 ## Data Structures
 
+* `Localheinz\DataStructure\Queue`
 * `Localheinz\DataStructure\Stack`
+
+### Queue
+
+```php
+use Localheinz\DataStructure\Queue;
+
+$queue = new Queue();
+
+$queue->isEmpty(); // true
+$queue->isFull(); // false
+
+$queue->enqueue('foo');
+$queue->enqueue('bar');
+$queue->isEmpty(); // false
+$queue->isFull(); // false
+
+$queue->dequeue(); // 'foo'
+$queue->dequeue(); // 'bar'
+$queue->isEmpty(); // true
+$queue->isFull(); // false
+
+$maxSize = 1;
+
+$anotherQueue = new Queue($maxSize);
+
+$anotherQueue->enqueue('foo');
+$anotherQueue->isFull(); // true
+```
 
 ### Stack
 
