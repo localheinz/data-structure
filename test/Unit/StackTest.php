@@ -14,21 +14,12 @@ declare(strict_types=1);
 namespace Localheinz\DataStructure\Test\Unit;
 
 use Localheinz\DataStructure\Stack;
-use Localheinz\DataStructure\StackInterface;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 final class StackTest extends Framework\TestCase
 {
     use Helper;
-
-    public function testImplementsStackInterface()
-    {
-        $this->assertClassImplementsInterface(
-            StackInterface::class,
-            Stack::class
-        );
-    }
 
     public function testConstructorRejectsInvalidSize()
     {
