@@ -14,21 +14,12 @@ declare(strict_types=1);
 namespace Localheinz\DataStructure\Test\Unit;
 
 use Localheinz\DataStructure\Queue;
-use Localheinz\DataStructure\QueueInterface;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 final class QueueTest extends Framework\TestCase
 {
     use Helper;
-
-    public function testImplementsQueueInterface()
-    {
-        $this->assertClassImplementsInterface(
-            QueueInterface::class,
-            Queue::class
-        );
-    }
 
     public function testConstructorRejectsInvalidSize()
     {

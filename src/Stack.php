@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Localheinz\DataStructure;
 
-final class Stack implements StackInterface
+final class Stack
 {
     private const SIZE_MIN = 0;
 
@@ -32,6 +32,13 @@ final class Stack implements StackInterface
      */
     private $elements = [];
 
+    /**
+     * Constructs an empty stack.
+     *
+     * @param int $maxSize
+     *
+     * @throws \InvalidArgumentException
+     */
     public function __construct(int $maxSize = PHP_INT_MAX)
     {
         if (self::SIZE_MIN > $maxSize) {
@@ -45,6 +52,13 @@ final class Stack implements StackInterface
         $this->maxSize = $maxSize;
     }
 
+    /**
+     * Pushes an element onto the stack.
+     *
+     * @param mixed $element
+     *
+     * @throws \BadMethodCallException
+     */
     public function push($element): void
     {
         if ($this->isFull()) {
@@ -56,6 +70,13 @@ final class Stack implements StackInterface
         $this->elements[] = $element;
     }
 
+    /**
+     * Pops an element from the top of the stack.
+     *
+     * @throws \BadMethodCallException
+     *
+     * @return mixed
+     */
     public function pop()
     {
         if (true === $this->isEmpty()) {
@@ -67,6 +88,13 @@ final class Stack implements StackInterface
         return \array_pop($this->elements);
     }
 
+    /**
+     * Returns the top-most element on the stack, without removing it from the stack.
+     *
+     * @throws \BadMethodCallException
+     *
+     * @return mixed
+     */
     public function peek()
     {
         if (true === $this->isEmpty()) {
@@ -76,11 +104,21 @@ final class Stack implements StackInterface
         return \end($this->elements);
     }
 
+    /**
+     * Returns true if the stack is empty.
+     *
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         return 0 === $this->size;
     }
 
+    /**
+     * Returns true if the stack is full.
+     *
+     * @return bool
+     */
     public function isFull(): bool
     {
         return $this->maxSize === $this->size;

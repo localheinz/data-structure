@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Localheinz\DataStructure;
 
-final class Queue implements QueueInterface
+final class Queue
 {
     private const SIZE_MIN = 0;
 
@@ -32,6 +32,14 @@ final class Queue implements QueueInterface
      */
     private $elements = [];
 
+    /**
+     * Constructs an empty queue.
+     *
+     *
+     * @param int $maxSize
+     *
+     * @throws \InvalidArgumentException
+     */
     public function __construct(int $maxSize = PHP_INT_MAX)
     {
         if (self::SIZE_MIN > $maxSize) {
@@ -45,6 +53,13 @@ final class Queue implements QueueInterface
         $this->maxSize = $maxSize;
     }
 
+    /**
+     * Adds an element to the end of the queue.
+     *
+     * @param mixed $element
+     *
+     * @throws \BadMethodCallException
+     */
     public function enqueue($element): void
     {
         if ($this->isFull()) {
@@ -56,6 +71,13 @@ final class Queue implements QueueInterface
         $this->elements[] = $element;
     }
 
+    /**
+     * Removes an element from the front of the queue.
+     *
+     * @throws \BadMethodCallException
+     *
+     * @return mixed
+     */
     public function dequeue()
     {
         if (true === $this->isEmpty()) {
@@ -67,11 +89,21 @@ final class Queue implements QueueInterface
         return \array_shift($this->elements);
     }
 
+    /**
+     * Returns true if queue is empty.
+     *
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         return 0 === $this->size;
     }
 
+    /**
+     * Returns true if queue is full.
+     *
+     * @return bool
+     */
     public function isFull(): bool
     {
         return $this->maxSize === $this->size;
