@@ -1,9 +1,7 @@
 # data-structure
 
 [![Build Status](https://travis-ci.org/localheinz/data-structure.svg?branch=master)](https://travis-ci.org/localheinz/data-structure)
-[![Code Climate](https://codeclimate.com/github/localheinz/data-structure/badges/gpa.svg)](https://codeclimate.com/github/localheinz/data-structure)
-[![Test Coverage](https://codeclimate.com/github/localheinz/data-structure/badges/coverage.svg)](https://codeclimate.com/github/localheinz/data-structure/coverage)
-[![Issue Count](https://codeclimate.com/github/localheinz/data-structure/badges/issue_count.svg)](https://codeclimate.com/github/localheinz/data-structure)
+[![codecov](https://codecov.io/gh/localheinz/data-structure/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/data-structure)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/data-structure/v/stable)](https://packagist.org/packages/localheinz/data-structure)
 [![Total Downloads](https://poser.pugx.org/localheinz/data-structure/downloads)](https://packagist.org/packages/localheinz/data-structure)
 
