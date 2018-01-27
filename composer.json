@@ -2,6 +2,7 @@
   "name": "localheinz/data-structure",
   "type": "library",
   "description": "Provides implementations of data structures.",
+  "homepage": "https://github.com/localheinz/data-structure",
   "license": "MIT",
   "authors": [
     {
@@ -30,5 +31,9 @@
     "psr-4": {
       "Localheinz\\DataStructure\\Test\\": "test/"
     }
+  },
+  "support": {
+    "issues": "https://github.com/localheinz/data-structure/issues",
+    "source": "https://github.com/localheinz/data-structure"
   }
 }
