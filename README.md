@@ -1,6 +1,6 @@
 # data-structure
 
-[![Build Status](https://travis-ci.org/localheinz/data-structure.svg?branch=master)](https://travis-ci.org/localheinz/data-structure)
+[![Build Status](https://travis-ci.com/localheinz/data-structure.svg?branch=master)](https://travis-ci.com/localheinz/data-structure)
 [![codecov](https://codecov.io/gh/localheinz/data-structure/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/data-structure)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/data-structure/v/stable)](https://packagist.org/packages/localheinz/data-structure)
 [![Total Downloads](https://poser.pugx.org/localheinz/data-structure/downloads)](https://packagist.org/packages/localheinz/data-structure)
