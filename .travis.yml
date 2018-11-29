@@ -12,6 +12,7 @@ cache:
 stages:
   - style
   - test
+  - infection
 
 jobs:
   include:
@@ -91,6 +92,26 @@ jobs:
       php: 7.2
 
       env: WITH_HIGHEST=true
+
+    - stage: Infection
+
+      php: 7.2
+
+      before_install:
+        - source .travis/xdebug.sh
+        - xdebug-disable
+        - composer validate
+        - if [[ -n "$GITHUB_TOKEN" ]]; then composer config github-oauth.github.com $GITHUB_TOKEN; fi
+
+      install:
+        - composer install
+
+      before_script:
+        - xdebug-enable
+        - mkdir -p $HOME/.infection
+
+      script:
+        - vendor/bin/infection --ignore-msi-with-no-mutations --min-covered-msi=100 --min-msi=100
 
 notifications:
   email: false
