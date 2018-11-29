@@ -17,6 +17,9 @@ use Localheinz\DataStructure\Queue;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class QueueTest extends Framework\TestCase
 {
     use Helper;
@@ -38,8 +41,8 @@ final class QueueTest extends Framework\TestCase
     {
         $queue = new Queue();
 
-        $this->assertTrue($queue->isEmpty());
-        $this->assertFalse($queue->isFull());
+        self::assertTrue($queue->isEmpty());
+        self::assertFalse($queue->isFull());
     }
 
     public function testQueueThrowsBadMethodCallExceptionIfQueueIsFull()
@@ -62,7 +65,7 @@ final class QueueTest extends Framework\TestCase
 
         $queue->enqueue($element);
 
-        $this->assertFalse($queue->isEmpty());
+        self::assertFalse($queue->isEmpty());
     }
 
     public function testDequeueThrowsBadMethodCallExceptionIfQueueIsEmpty()
@@ -85,8 +88,8 @@ final class QueueTest extends Framework\TestCase
         $queue->enqueue($elementOne);
         $queue->enqueue($elementTwo);
 
-        $this->assertSame($elementOne, $queue->dequeue());
-        $this->assertSame($elementTwo, $queue->dequeue());
-        $this->assertTrue($queue->isEmpty());
+        self::assertSame($elementOne, $queue->dequeue());
+        self::assertSame($elementTwo, $queue->dequeue());
+        self::assertTrue($queue->isEmpty());
     }
 }

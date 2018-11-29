@@ -35,12 +35,11 @@ final class Queue
     /**
      * Constructs an empty queue.
      *
-     *
      * @param int $maxSize
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(int $maxSize = PHP_INT_MAX)
+    public function __construct(int $maxSize = \PHP_INT_MAX)
     {
         if (self::SIZE_MIN > $maxSize) {
             throw new \InvalidArgumentException(\sprintf(
