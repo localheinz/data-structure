@@ -39,7 +39,7 @@ final class Stack
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(int $maxSize = PHP_INT_MAX)
+    public function __construct(int $maxSize = \PHP_INT_MAX)
     {
         if (self::SIZE_MIN > $maxSize) {
             throw new \InvalidArgumentException(\sprintf(

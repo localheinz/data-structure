@@ -17,6 +17,9 @@ use Localheinz\DataStructure\Stack;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class StackTest extends Framework\TestCase
 {
     use Helper;
@@ -38,8 +41,8 @@ final class StackTest extends Framework\TestCase
     {
         $stack = new Stack();
 
-        $this->assertTrue($stack->isEmpty());
-        $this->assertFalse($stack->isFull());
+        self::assertTrue($stack->isEmpty());
+        self::assertFalse($stack->isFull());
     }
 
     public function testPushThrowsBadMethodCallExceptionIfStackIsFull()
@@ -62,7 +65,7 @@ final class StackTest extends Framework\TestCase
 
         $stack->push($element);
 
-        $this->assertFalse($stack->isEmpty());
+        self::assertFalse($stack->isEmpty());
     }
 
     public function testPopThrowsBadMethodCallExceptionIfStackIsEmpty()
@@ -85,9 +88,9 @@ final class StackTest extends Framework\TestCase
         $stack->push($elementOne);
         $stack->push($elementTwo);
 
-        $this->assertSame($elementTwo, $stack->pop());
-        $this->assertSame($elementOne, $stack->pop());
-        $this->assertTrue($stack->isEmpty());
+        self::assertSame($elementTwo, $stack->pop());
+        self::assertSame($elementOne, $stack->pop());
+        self::assertTrue($stack->isEmpty());
     }
 
     public function testPeekThrowsBadMethodCallExceptionIfStackIsEmpty()
@@ -110,7 +113,7 @@ final class StackTest extends Framework\TestCase
         $stack->push($elementOne);
         $stack->push($elementTwo);
 
-        $this->assertSame($elementTwo, $stack->peek());
-        $this->assertSame($elementTwo, $stack->peek());
+        self::assertSame($elementTwo, $stack->peek());
+        self::assertSame($elementTwo, $stack->peek());
     }
 }
