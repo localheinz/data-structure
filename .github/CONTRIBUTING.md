@@ -28,6 +28,16 @@ $ make cs
 
 to automatically fix coding standard violations.
 
+We are using [`infection/infection`](https://github.com/infection/infection) to ensure a minimum quality of the tests.
+
+Enable `xdebug` and run
+
+```
+$ make infection
+```
+
+to run mutation tests.
+
 ## Extra lazy?
 
 Run
@@ -36,4 +46,4 @@ Run
 $ make
 ```
 
-to run both coding standards check and tests!
+to enforce coding standards, perform a static code analysis, and run tests!
