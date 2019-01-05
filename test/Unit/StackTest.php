@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller.
+ * Copyright (c) 2017 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -24,7 +24,7 @@ final class StackTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testConstructorRejectsInvalidSize()
+    public function testConstructorRejectsInvalidSize(): void
     {
         $size = -1;
 
@@ -37,7 +37,7 @@ final class StackTest extends Framework\TestCase
         new Stack($size);
     }
 
-    public function testDefaults()
+    public function testDefaults(): void
     {
         $stack = new Stack();
 
@@ -45,7 +45,7 @@ final class StackTest extends Framework\TestCase
         self::assertFalse($stack->isFull());
     }
 
-    public function testPushThrowsBadMethodCallExceptionIfStackIsFull()
+    public function testPushThrowsBadMethodCallExceptionIfStackIsFull(): void
     {
         $element = 'foo';
 
@@ -57,7 +57,7 @@ final class StackTest extends Framework\TestCase
         $stack->push($element);
     }
 
-    public function testPushPushesElementOntoStack()
+    public function testPushPushesElementOntoStack(): void
     {
         $element = 'foo';
 
@@ -68,7 +68,7 @@ final class StackTest extends Framework\TestCase
         self::assertFalse($stack->isEmpty());
     }
 
-    public function testPopThrowsBadMethodCallExceptionIfStackIsEmpty()
+    public function testPopThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
         $stack = new Stack();
 
@@ -78,7 +78,7 @@ final class StackTest extends Framework\TestCase
         $stack->pop();
     }
 
-    public function testPopRemovesTopMostElementFromStackAndReturnsIt()
+    public function testPopRemovesTopMostElementFromStackAndReturnsIt(): void
     {
         $elementOne = 'foo';
         $elementTwo = 'bar';
@@ -93,7 +93,7 @@ final class StackTest extends Framework\TestCase
         self::assertTrue($stack->isEmpty());
     }
 
-    public function testPeekThrowsBadMethodCallExceptionIfStackIsEmpty()
+    public function testPeekThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
         $stack = new Stack();
 
@@ -103,7 +103,7 @@ final class StackTest extends Framework\TestCase
         $stack->peek();
     }
 
-    public function testPeekReturnsTopMostElementFromStackButDoesNotRemoveIt()
+    public function testPeekReturnsTopMostElementFromStackButDoesNotRemoveIt(): void
     {
         $elementOne = 'foo';
         $elementTwo = 'bar';

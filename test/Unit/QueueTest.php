@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller.
+ * Copyright (c) 2017 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -24,7 +24,7 @@ final class QueueTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testConstructorRejectsInvalidSize()
+    public function testConstructorRejectsInvalidSize(): void
     {
         $size = -1;
 
@@ -37,7 +37,7 @@ final class QueueTest extends Framework\TestCase
         new Queue($size);
     }
 
-    public function testDefaults()
+    public function testDefaults(): void
     {
         $queue = new Queue();
 
@@ -45,7 +45,7 @@ final class QueueTest extends Framework\TestCase
         self::assertFalse($queue->isFull());
     }
 
-    public function testQueueThrowsBadMethodCallExceptionIfQueueIsFull()
+    public function testQueueThrowsBadMethodCallExceptionIfQueueIsFull(): void
     {
         $element = 'foo';
 
@@ -57,7 +57,7 @@ final class QueueTest extends Framework\TestCase
         $queue->enqueue($element);
     }
 
-    public function testQueueAddsElementToQueue()
+    public function testQueueAddsElementToQueue(): void
     {
         $element = 'foo';
 
@@ -68,7 +68,7 @@ final class QueueTest extends Framework\TestCase
         self::assertFalse($queue->isEmpty());
     }
 
-    public function testDequeueThrowsBadMethodCallExceptionIfQueueIsEmpty()
+    public function testDequeueThrowsBadMethodCallExceptionIfQueueIsEmpty(): void
     {
         $queue = new Queue();
 
@@ -78,7 +78,7 @@ final class QueueTest extends Framework\TestCase
         $queue->dequeue();
     }
 
-    public function testDequeueRemovesFirstElementFromFromQueueAndReturnsIt()
+    public function testDequeueRemovesFirstElementFromFromQueueAndReturnsIt(): void
     {
         $elementOne = 'foo';
         $elementTwo = 'bar';
