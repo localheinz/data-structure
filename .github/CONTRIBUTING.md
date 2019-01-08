@@ -28,6 +28,20 @@ $ make cs
 
 to automatically fix coding standard violations.
 
+## Static Code Analysis
+
+We are using [`phpstan/phpstan`](https://github.com/phpstan/phpstan) to statically analyze the code.
+
+Run
+
+```
+$ make stan
+```
+
+to run a static code analysis.
+
+## Mutation Testing
+
 We are using [`infection/infection`](https://github.com/infection/infection) to ensure a minimum quality of the tests.
 
 Enable `xdebug` and run
