@@ -1,4 +1,2 @@
 /.build/
-/.infection/
 /vendor/
-/.php_cs.cache

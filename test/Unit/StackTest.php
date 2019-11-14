@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/data-structure
+ * @see https://github.com/localheinz/data-structure
  */
 
 namespace Localheinz\DataStructure\Test\Unit;
@@ -19,6 +19,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\DataStructure\Stack
  */
 final class StackTest extends Framework\TestCase
 {
@@ -39,7 +41,9 @@ final class StackTest extends Framework\TestCase
 
     public function testDefaults(): void
     {
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         self::assertTrue($stack->isEmpty());
         self::assertFalse($stack->isFull());
@@ -61,7 +65,9 @@ final class StackTest extends Framework\TestCase
     {
         $element = 'foo';
 
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         $stack->push($element);
 
@@ -70,7 +76,9 @@ final class StackTest extends Framework\TestCase
 
     public function testPopThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage('Cannot pop element from empty stack.');
@@ -83,7 +91,9 @@ final class StackTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         $stack->push($elementOne);
         $stack->push($elementTwo);
@@ -95,7 +105,9 @@ final class StackTest extends Framework\TestCase
 
     public function testPeekThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage('Cannot peek into empty stack.');
@@ -108,7 +120,9 @@ final class StackTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $stack = new Stack();
+        $size = $this->faker()->numberBetween(1);
+
+        $stack = new Stack($size);
 
         $stack->push($elementOne);
         $stack->push($elementTwo);

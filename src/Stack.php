@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/data-structure
+ * @see https://github.com/localheinz/data-structure
  */
 
 namespace Localheinz\DataStructure;
@@ -39,7 +39,7 @@ final class Stack
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(int $maxSize = \PHP_INT_MAX)
+    public function __construct(int $maxSize)
     {
         if (self::SIZE_MIN > $maxSize) {
             throw new \InvalidArgumentException(\sprintf(
