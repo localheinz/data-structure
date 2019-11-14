@@ -1,6 +1,6 @@
 # data-structure
 
-[![Build Status](https://travis-ci.com/localheinz/data-structure.svg?branch=master)](https://travis-ci.com/localheinz/data-structure)
+[![CI Status](https://github.com/localheinz/data-structure/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/data-structure/actions)
 [![codecov](https://codecov.io/gh/localheinz/data-structure/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/data-structure)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/data-structure/v/stable)](https://packagist.org/packages/localheinz/data-structure)
 [![Total Downloads](https://poser.pugx.org/localheinz/data-structure/downloads)](https://packagist.org/packages/localheinz/data-structure)
@@ -77,6 +77,10 @@ $anotherStack = new Stack($maxSize);
 $anotherStack->push('foo');
 $anotherStack->isFull(); // true
 ```
+
+## Changelog
+
+Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Contributing
 

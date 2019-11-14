@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/data-structure
+ * @see https://github.com/localheinz/data-structure
  */
 
 namespace Localheinz\DataStructure\Test\Unit;
@@ -19,6 +19,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\DataStructure\Queue
  */
 final class QueueTest extends Framework\TestCase
 {
@@ -39,7 +41,9 @@ final class QueueTest extends Framework\TestCase
 
     public function testDefaults(): void
     {
-        $queue = new Queue();
+        $size = $this->faker()->numberBetween(1);
+
+        $queue = new Queue($size);
 
         self::assertTrue($queue->isEmpty());
         self::assertFalse($queue->isFull());
@@ -61,7 +65,9 @@ final class QueueTest extends Framework\TestCase
     {
         $element = 'foo';
 
-        $queue = new Queue();
+        $size = $this->faker()->numberBetween(1);
+
+        $queue = new Queue($size);
 
         $queue->enqueue($element);
 
@@ -70,7 +76,9 @@ final class QueueTest extends Framework\TestCase
 
     public function testDequeueThrowsBadMethodCallExceptionIfQueueIsEmpty(): void
     {
-        $queue = new Queue();
+        $size = $this->faker()->numberBetween(1);
+
+        $queue = new Queue($size);
 
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage('Cannot dequeue element from empty queue.');
@@ -83,7 +91,9 @@ final class QueueTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $queue = new Queue();
+        $size = $this->faker()->numberBetween(1);
+
+        $queue = new Queue($size);
 
         $queue->enqueue($elementOne);
         $queue->enqueue($elementTwo);
