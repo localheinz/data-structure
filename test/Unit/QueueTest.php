@@ -41,7 +41,7 @@ final class QueueTest extends Framework\TestCase
 
     public function testDefaults(): void
     {
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $queue = new Queue($size);
 
@@ -65,7 +65,7 @@ final class QueueTest extends Framework\TestCase
     {
         $element = 'foo';
 
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $queue = new Queue($size);
 
@@ -76,7 +76,7 @@ final class QueueTest extends Framework\TestCase
 
     public function testDequeueThrowsBadMethodCallExceptionIfQueueIsEmpty(): void
     {
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $queue = new Queue($size);
 
@@ -91,7 +91,7 @@ final class QueueTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $queue = new Queue($size);
 
