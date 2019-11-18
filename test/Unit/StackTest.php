@@ -41,7 +41,7 @@ final class StackTest extends Framework\TestCase
 
     public function testDefaults(): void
     {
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
@@ -65,7 +65,7 @@ final class StackTest extends Framework\TestCase
     {
         $element = 'foo';
 
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
@@ -76,7 +76,7 @@ final class StackTest extends Framework\TestCase
 
     public function testPopThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
@@ -91,7 +91,7 @@ final class StackTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
@@ -105,7 +105,7 @@ final class StackTest extends Framework\TestCase
 
     public function testPeekThrowsBadMethodCallExceptionIfStackIsEmpty(): void
     {
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
@@ -120,7 +120,7 @@ final class StackTest extends Framework\TestCase
         $elementOne = 'foo';
         $elementTwo = 'bar';
 
-        $size = $this->faker()->numberBetween(1);
+        $size = self::faker()->numberBetween(1);
 
         $stack = new Stack($size);
 
